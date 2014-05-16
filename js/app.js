@@ -19,6 +19,12 @@ angular.module('CloudSlidesApp', [
 
             })
 
+            //Login
+            .when('/login', {
+                templateUrl: 'views/login.html',
+                controller: 'Login'
+            })
+
             .otherwise({
                 redirectTo: '/welcome'
             })

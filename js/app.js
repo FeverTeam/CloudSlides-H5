@@ -1,6 +1,7 @@
 angular.module('CloudSlidesApp', [
     'ionic',    //Ionic Framework
     'ngRoute',   //Angular route
+    'pascalprecht.translate', //Angular translate
 
     //Controllers
     'welcomeCtrl',
@@ -8,6 +9,31 @@ angular.module('CloudSlidesApp', [
     'signupCtrl'
 ])
 
+
+    //config i18n
+    .config(['$translateProvider', function ($translateProvider) {
+
+        $translateProvider.useStaticFilesLoader({
+            prefix: 'i18n/locale-',
+            suffix: '.json'
+        });
+//        $translateProvider.preferredLanguage(navigator.language);
+//        $translateProvider.translations('en', {
+//            GREETING: 'Hello world!'
+//        });
+//        // registers translation table with language key 'de'
+//        $translateProvider.translations('zh', {
+//            GREETING: 'Hallo Welt!'
+//        });
+//
+//        $translateProvider.registerAvailableLanguageKeys(['en', 'zh'], {
+//         })
+        $translateProvider.determinePreferredLanguage();
+
+
+    }])
+
+    //config routers
     .config(['$routeProvider', function ($routeProvider) {
 
 

@@ -4,7 +4,8 @@ angular.module('CloudSlidesApp', [
 
     //Controllers
     'welcomeCtrl',
-    'loginCtrl'
+    'loginCtrl',
+    'signupCtrl'
 ])
 
     .config(['$routeProvider', function ($routeProvider) {
@@ -24,6 +25,12 @@ angular.module('CloudSlidesApp', [
             .when('/login', {
                 templateUrl: 'views/login.html',
                 controller: 'LoginCtrl'
+            })
+
+            //Signup
+            .when('/signup', {
+                templateUrl: 'views/signup.html',
+                controller: 'SignupCtrl'
             })
 
             .otherwise({

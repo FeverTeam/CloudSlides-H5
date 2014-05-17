@@ -3,7 +3,8 @@ angular.module('CloudSlidesApp', [
     'ngRoute',   //Angular route
 
     //Controllers
-    'welcomeCtrl'
+    'welcomeCtrl',
+    'loginCtrl'
 ])
 
     .config(['$routeProvider', function ($routeProvider) {
@@ -22,11 +23,11 @@ angular.module('CloudSlidesApp', [
             //Login
             .when('/login', {
                 templateUrl: 'views/login.html',
-                controller: 'Login'
+                controller: 'LoginCtrl'
             })
 
             .otherwise({
-                redirectTo: '/welcome'
+                redirectTo: '/login'
             })
 
     }]);

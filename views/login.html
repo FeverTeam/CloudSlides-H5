@@ -1,34 +1,39 @@
 <!--header-->
 <ion-header-bar align-title="center" class="bar-stable">
-    <h1 class="title">Welcome</h1>
+    <h1 class="title">{{'login.headerTitle'|translate}}</h1>
 </ion-header-bar>
 
 <!--content-->
-<ion-content>
+<ion-content ng-controller="LoginCtrl">
+
+    <!--登录信息输入-->
     <div class="list list-inset">
         <label class="item item-input">
-            <input type="text" placeholder="Email">
+            <input type="text" class="login-input" placeholder="{{'login.inputEmailPlaceholder'|translate}}"
+                   ng-model="inputEmail" ng-blur="onEmailBlur()">
         </label>
         <label class="item item-input">
-            <input type="password" placeholder="Password">
-        </label>
-        <label>
-            <li class="item item-checkbox">
-                <label class="checkbox">
-                    <input type="checkbox">
-                </label>
-                Remember me
-            </li>
+            <input type="password" class="login-input" placeholder="{{'login.inputPasswordPlaceholder'|translate}}"
+                   ng-model="inputPassword" ng-blur="onPasswordBlur()">
         </label>
     </div>
+
+    <!--提示信息-->
+    <div class="card" ng-show="isCardShow">
+        <div class="item item-text-wrap">
+            {{reminderText}}
+        </div>
+    </div>
+
+    <!--登录按钮-->
     <div class="padding">
-        <button class="button button-block button-balanced">
-            Log In {{'AUTHOR.NAME'|translate}}
+        <button class="button button-block button-balanced" ng-click="onLoginButtonClick()">
+            {{'login.loginButtonText'|translate}}
         </button>
 
-        <button class="button button-block button-clear button-positive" ng-click="jumpTo('/signup')">
-            Want a new account?
-        </button>
+        <a class="button button-block button-clear button-positive" href="#/signup">
+            {{'login.labelToSignup'|translate}}
+        </a>
     </div>
 
 

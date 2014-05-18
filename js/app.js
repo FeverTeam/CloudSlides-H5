@@ -6,7 +6,10 @@ angular.module('CloudSlidesApp', [
     //Controllers
     'welcomeCtrl',
     'loginCtrl',
-    'signupCtrl'
+    'signupCtrl',
+
+    //Services
+    'valiateSrv'
 ])
 
 
@@ -53,11 +56,13 @@ angular.module('CloudSlidesApp', [
                 controller: 'LoginCtrl'
             })
 
+
             //Signup
             .when('/signup', {
                 templateUrl: 'views/signup.html',
                 controller: 'SignupCtrl'
             })
+
 
             .otherwise({
                 redirectTo: '/login'

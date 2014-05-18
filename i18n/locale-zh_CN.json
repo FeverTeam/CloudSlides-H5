@@ -1,5 +1,10 @@
 {
-    "AUTHOR" : {
-        "NAME": "博文"
+    "login": {
+        "headerTitle": "登录CloudSlides云幻灯",
+        "inputEmailPlaceholder": "Email 电邮",
+        "inputPasswordPlaceholder": "Passsword 密码",
+        "loginButtonText": "登录",
+        "labelToSignup":"注册新的云幻灯帐号？"
     }
+
 }

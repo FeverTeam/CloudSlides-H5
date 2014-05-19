@@ -1,9 +1,8 @@
 angular.module('User', ['config'])
     .factory('User', function ($resource, serverAddress) {
-//        $http.defaults.useXDomain = true;
         return $resource(
             //url
-                server + '/User',
+                serverAddress + '/User',
 
             //paramDefaults
             {
@@ -14,7 +13,7 @@ angular.module('User', ['config'])
             {
                 'login': {
                     method: 'POST',
-                    url: serverAddress+'/User/login'
+                    url: serverAddress + '/User/login'
                 }
 
             });

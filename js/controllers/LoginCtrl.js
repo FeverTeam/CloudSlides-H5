@@ -1,6 +1,6 @@
-angular.module('loginCtrl', ['User'])
+angular.module('LoginCtrl', ['User', 'userInfoSrv'])
 
-    .controller('LoginCtrl', function ($scope, valiateSrv, User) {
+    .controller('LoginCtrl', function ($scope, $location, valiateSrv, userInfoSrv, User) {
 
         //初始化
         $scope.inputEmail = "a@b.c";
@@ -25,15 +25,20 @@ angular.module('loginCtrl', ['User'])
 
             $scope.isCardShow = false;
 
+            //执行登录操作
+            User.login(
+                {
+                    email: $scope.inputEmail,
+                    password: $scope.inputPassword
+                },
+                function (result) {
 
-            User.get({id: 1}, function (user) {
-                console.log(user);;
-                console.log(user.email);
-            });
-
-            User.login({email: $scope.inputEmail, password: $scope.inputPassword});
-
-
+                    //unimplement
+//                    console.log(result);
+                    //更新用户信息
+                    userInfoSrv.update(result.id, result.email, result.token, result.nickname);
+                    $location.path("/main");
+                });
         };
 
         $scope.onEmailBlur = function () {

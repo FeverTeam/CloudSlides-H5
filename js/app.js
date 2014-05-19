@@ -5,13 +5,16 @@ angular.module('CloudSlidesApp', [
     'pascalprecht.translate', //Angular translate
 
     //Controllers
-    'welcomeCtrl',
-    'loginCtrl',
-    'signupCtrl',
+    'WelcomeCtrl',
+    'LoginCtrl',
+    'SignupCtrl',
+    'MainCtrl',
 
     //Services
     'config',   //app constants
-    'valiateSrv'
+    'valiateSrv',
+    'settingSrv',
+    'userInfoSrv'
 
 ])
 
@@ -64,6 +67,12 @@ angular.module('CloudSlidesApp', [
             .when('/signup', {
                 templateUrl: 'views/signup.html',
                 controller: 'SignupCtrl'
+            })
+
+            //Main
+            .when('/main', {
+                templateUrl: 'views/main.html',
+                controller: 'MainCtrl'
             })
 
 

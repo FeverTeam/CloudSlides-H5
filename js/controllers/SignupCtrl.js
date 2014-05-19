@@ -1,4 +1,4 @@
-angular.module('signupCtrl', [])
+angular.module('SignupCtrl', [])
 
     .controller('SignupCtrl', function ($scope, $location) {
 

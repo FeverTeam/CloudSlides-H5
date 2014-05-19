@@ -1,4 +1,4 @@
-angular.module('welcomeCtrl', [])
+angular.module('WelcomeCtrl', [])
 
     .controller('WelcomeCtrl', function ($scope, $interval, $location) {
         $interval(function () {

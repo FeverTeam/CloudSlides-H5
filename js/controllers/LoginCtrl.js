@@ -31,14 +31,20 @@ angular.module('LoginCtrl', ['User', 'userInfoSrv'])
                     email: $scope.inputEmail,
                     password: $scope.inputPassword
                 },
-                function (result) {
+                function (result, responseHeaders) {
 
                     //unimplement
 //                    console.log(result);
                     //更新用户信息
                     userInfoSrv.update(result.id, result.email, result.token, result.nickname);
                     $location.path("/main");
+                },
+                function (httpResponse) {
+                    console.log(httpResponse);
+                    window.alert('failed');
+                    $location.path("/main");
                 });
+
         };
 
         $scope.onEmailBlur = function () {

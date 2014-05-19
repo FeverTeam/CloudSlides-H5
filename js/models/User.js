@@ -1,7 +1,6 @@
 angular.module('User', ['config'])
-    .factory('User', function ($resource, serverAddress, $http) {
+    .factory('User', function ($resource, serverAddress) {
 //        $http.defaults.useXDomain = true;
-        var server = serverAddress;
         return $resource(
             //url
                 server + '/User',

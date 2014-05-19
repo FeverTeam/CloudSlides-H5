@@ -27,36 +27,35 @@ angular.module('loginCtrl', ['User'])
 
 
             User.get({id: 1}, function (user) {
-                console.log(user)
-                console.log(user.email)
+                console.log(user);;
+                console.log(user.email);
             });
 
             User.login({email: $scope.inputEmail, password: $scope.inputPassword});
 
 
-        }
+        };
 
         $scope.onEmailBlur = function () {
             var check = checkEmail($scope.inputEmail);
             if (check.message != "") {
                 $scope.reminderText = check.message;
                 $scope.isCardShow = true;
-                return;
+
             } else {
                 $scope.isCardShow = false
             }
-        }
+        };
 
 
         $scope.onPasswordBlur = function () {
             if ($scope.inputPassword.length < 6) {
                 $scope.reminderText = "输入至少6位的密码";
                 $scope.isCardShow = true;
-                return;
             } else {
                 $scope.isCardShow = false
             }
-        }
+        };
 
         //私有方法
         function checkEmail(email) {

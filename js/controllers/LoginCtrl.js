@@ -1,10 +1,10 @@
-angular.module('loginCtrl', [])
+angular.module('loginCtrl', ['User'])
 
-    .controller('LoginCtrl', function ($scope, valiateSrv) {
+    .controller('LoginCtrl', function ($scope, valiateSrv, User) {
 
         //初始化
-        $scope.inputEmail = "";
-        $scope.inputPassword = "";
+        $scope.inputEmail = "a@b.c";
+        $scope.inputPassword = "123456";
         $scope.isCardShow = false;
 
         //事件
@@ -24,6 +24,14 @@ angular.module('loginCtrl', [])
             }
 
             $scope.isCardShow = false;
+
+
+            User.get({id: 1}, function (user) {
+                console.log(user)
+                console.log(user.email)
+            });
+
+            User.login({email: $scope.inputEmail, password: $scope.inputPassword});
 
 
         }
@@ -60,5 +68,6 @@ angular.module('loginCtrl', [])
             }
             return check;
         }
+
 
     });

@@ -15,18 +15,20 @@
 
     <!--JS-->
     <!--Ionic bundled with AngularJS-->
-    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
     <!--Angular route-->
     <script src="lib/bower-angular-route-1.3.0-beta.9/angular-route.min.js"></script>
     <!--Angular translate-->
     <script src="lib/bower-angular-translate-2.1.0/angular-translate.min.js"></script>
     <script src="lib/bower-angular-translate-loader-static-files-2.1.0/angular-translate-loader-static-files.min.js"></script>
-    <!--<script src="lib/bower-angular-translate-loader-url-2.1.0/angular-translate-loader-url.min.js"></script>-->
+    <!--Angular resources-->
+    <script src="lib/bower-angular-resource-1.3.0-beta.9/angular-resource.min.js"></script>
 
     <!--PhoneGap-->
     <!-- Needed for Cordova/PhoneGap (will be a 404 during development) -->
     <!--<script src="cordova.js"></script>-->
 
+    <!--////////////-->
     <!--App-->
     <script src="js/app.js"></script>
     <!--Controllers-->
@@ -35,13 +37,18 @@
     <script src="js/controllers/LoginCtrl.js"></script>
     <!--Services-->
     <script src="js/services/valiateSrv.js"></script>
+    <script src="js/services/config.js"></script>
+    <!--Models-->
+    <script src="js/models/User.js"></script>
+
+
+
 
 </head>
 
 
 <body ng-app="CloudSlidesApp">
-<div ng-view></div>
+    <div ng-view></div>
 </body>
-
 
 </html>

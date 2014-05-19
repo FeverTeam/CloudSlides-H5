@@ -1,6 +1,7 @@
 angular.module('CloudSlidesApp', [
     'ionic',    //Ionic Framework
     'ngRoute',   //Angular route
+    'ngResource',   //Angular resource
     'pascalprecht.translate', //Angular translate
 
     //Controllers
@@ -9,7 +10,9 @@ angular.module('CloudSlidesApp', [
     'signupCtrl',
 
     //Services
+    'config',   //app constants
     'valiateSrv'
+
 ])
 
 

@@ -3,44 +3,20 @@
     <!-- Center content -->
     <ion-side-menu-content>
         <ion-header-bar class="bar-positive">
-
-            <button class="button button-icon" ng-click="toggleLeftSideMenu()">
-                <i class="icon ion-navicon-round"></i>
-            </button>
-            <h1 class="title">CloudSlides云幻灯</h1>
-
+            <h1 class="title">{{'main.headerTitle'|translate}}</h1>
         </ion-header-bar>
-        <ion-content class="stable-bg ">
-            <!--<div class="card">-->
-            <!--<div class="item">-->
-            <!--<div class="row">-->
-            <!--<div class="col-25">-->
-            <!--<img src="images/notebook-icon.png">-->
-            <!--</div>-->
-            <!--<div class="col">-->
-            <!--<h2>Pretty Hate Machine</h2>-->
-            <!--<p>Nine Inch Nails</p>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
 
-            <!--<p>hihi</p>-->
+        <ion-content class="stable-bg" ng-controller="MainCtrl">
+            <!--用户欢迎信息-->
             <div class="list list-inset ">
                 <a class="item item-icon-right">
                     <i class="icon ion-ios7-person-outline"></i>
-                    Hi, Simon !
+                    <!--Hi, Simon !-->
+                    {{'main.helloMessage'|translate:translationData}}
                 </a>
             </div>
-            <!--<div class="list card">-->
 
-            <!--<a href="#" class="item item-icon-left">-->
-            <!--<i class="icon ion-home"></i>-->
-            <!--Enter home address-->
-            <!--</a>-->
-            <!--</div>-->
-            <!--<div class="list card">-->
-
+            <!--功能面板-->
             <div class="card">
                 <a class="item item-thumbnail-left assertive" href="#">
                     <img src="images/notebook-icon.png">
@@ -69,10 +45,7 @@
                 </a>
             </div>
 
-            <!--<div class="item item-divider">-->
-            <!--</div>-->
-
-            <!--</div>-->
+            <!--辅助功能-->
             <div class="card">
                 <div class="item tabs tabs-icon-left">
                     <a class="tab-item" href="#">
@@ -89,24 +62,8 @@
                     </a>
                 </div>
             </div>
+
         </ion-content>
     </ion-side-menu-content>
-
-    <!-- Left menu -->
-    <ion-side-menu side="left">
-        <ion-header-bar class="bar-royal">
-            <h1 class="title">Projects</h1>
-        </ion-header-bar>
-        <ion-content class="stable-bg">
-            <div class="list">
-                <div class="list-item">
-                    <h2>hehe</h2>
-                </div>
-                <div class="list-item">
-                    <h2>hehe</h2>
-                </div>
-            </div>
-        </ion-content>
-    </ion-side-menu>
 
 </ion-side-menus>

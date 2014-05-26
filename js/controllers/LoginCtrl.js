@@ -41,7 +41,6 @@ angular.module('LoginCtrl', ['User', 'userInfoSrv'])
                 },
                 function (httpResponse) {
                     console.log(httpResponse);
-                    window.alert('failed');
                     $location.path("/main");
                 });
 

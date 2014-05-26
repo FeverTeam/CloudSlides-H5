@@ -77,7 +77,7 @@ angular.module('CloudSlidesApp', [
 
 
             .otherwise({
-                redirectTo: '/login'
+                redirectTo: '/main'
             })
 
     }]);

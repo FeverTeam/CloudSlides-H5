@@ -5,6 +5,10 @@
         "inputPasswordPlaceholder": "Passsword 密码",
         "loginButtonText": "登录",
         "labelToSignup":"注册新的云幻灯帐号？"
+    },
+    "main": {
+        "headerTitle": "CloudSlides云幻灯",
+        "helloMessage": "Hi, {{userName}}"
     }
 
 }

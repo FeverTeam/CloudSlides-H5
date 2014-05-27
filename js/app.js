@@ -9,6 +9,9 @@ angular.module('CloudSlidesApp', [
     'LoginCtrl',
     'SignupCtrl',
     'MainCtrl',
+    'MyPptCtrl',
+    'MyControlCtrl',
+    'MyAttendCtrl',
 
     //Services
     'config',   //app constants
@@ -73,6 +76,24 @@ angular.module('CloudSlidesApp', [
             .when('/main', {
                 templateUrl: 'views/main.html',
                 controller: 'MainCtrl'
+            })
+
+            //MyPpt
+            .when('/myppt', {
+                templateUrl: 'views/myppt.html',
+                controller:'MyPptCtrl'
+            })
+
+            //MyControl
+            .when('/mycontrol', {
+                templateUrl: 'views/mycontrol.html',
+                controller:'MyControlCtrl'
+            })
+
+            //MyAttend
+            .when('/myattend', {
+                templateUrl: 'views/myattend.html',
+                controller:'MyAttendCtrl'
             })
 
 

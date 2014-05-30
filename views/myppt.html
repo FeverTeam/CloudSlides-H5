@@ -2,10 +2,9 @@
     <h1 class="title">我的幻灯</h1>
 </ion-header-bar>
 <ion-content>
-    <div ng-repeat="ppt in ppts">
 
-        <div class="list card">
-
+    <div class="list">
+        <div class="card" ng-repeat="ppt in ppts">
             <div class="item item-body">
                 <img src="http://ionicframework.com/img/docs/delorean.jpg" class="full-image"/>
 
@@ -34,7 +33,6 @@
                     详情
                 </a>
             </div>
-
         </div>
     </div>
 

@@ -21,9 +21,8 @@ angular.module('CloudSlidesApp', [
 
 ])
 
-
     //config i18n
-    .config(['$translateProvider', function ($translateProvider) {
+    .config(function ($translateProvider) {
 
         $translateProvider.useStaticFilesLoader({
             prefix: 'i18n/locale-',
@@ -43,62 +42,77 @@ angular.module('CloudSlidesApp', [
         $translateProvider.determinePreferredLanguage();
 
 
-    }])
+    })
 
-    //config routers
-    .config(['$routeProvider', function ($routeProvider) {
+    //设置url router
+    .config(function ($urlRouterProvider) {
+        //引导首页
+        $urlRouterProvider
+            .when('', '/main');
+    })
 
-
-        //    set router
-        $routeProvider
-
-            //Welcome Screen
-            .when('/welcome', {
+    //配置state provider
+    .config(function ($stateProvider) {
+        $stateProvider
+            //Welcome
+            .state('welcome', {
+                url: '/welcome',
                 templateUrl: 'views/welcome.html',
                 controller: 'WelcomeCtrl'
 
             })
 
             //Login
-            .when('/login', {
+            .state('login', {
+                url: '/login',
                 templateUrl: 'views/login.html',
                 controller: 'LoginCtrl'
             })
 
-
             //Signup
-            .when('/signup', {
+            .state('signup', {
+                url: '/signup',
                 templateUrl: 'views/signup.html',
                 controller: 'SignupCtrl'
             })
 
             //Main
-            .when('/main', {
+            .state('main', {
+                url: '/main',
                 templateUrl: 'views/main.html',
                 controller: 'MainCtrl'
             })
 
-            //MyPpt
-            .when('/myppt', {
+            //PPT
+            .state('ppt', {
+                abstract: true,
+                url: '/ppt',
+                templateUrl: 'views/temp.html'
+            })
+            .state('ppt.list', {
+                url: '/list',
                 templateUrl: 'views/myppt.html',
-                controller:'MyPptCtrl'
+                controller: 'MyPptCtrl'
+            })
+            .state('ppt.detail', {
+                url: '/detail',
+                templateUrl: 'views/pptdetail.html',
+                controller: 'MyPptCtrl'
             })
 
+
             //MyControl
-            .when('/mycontrol', {
+            .state('mycontrol', {
+                url: '/mycontrol',
                 templateUrl: 'views/mycontrol.html',
-                controller:'MyControlCtrl'
+                controller: 'MyControlCtrl'
             })
 
             //MyAttend
-            .when('/myattend', {
+            .state('myattend', {
+                url: '/myattend',
                 templateUrl: 'views/myattend.html',
-                controller:'MyAttendCtrl'
-            })
-
-
-            .otherwise({
-                redirectTo: '/main'
-            })
-
-    }]);
+                controller: 'MyAttendCtrl'
+            });
+    });
+;

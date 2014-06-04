@@ -84,18 +84,18 @@ angular.module('CloudSlidesApp', [
             })
 
             //PPT
-            .state('ppt', {
-                abstract: true,
-                url: '/ppt',
-                templateUrl: 'views/temp.html'
-            })
-            .state('ppt.list', {
-                url: '/list',
+//            .state('ppt', {
+//                abstract: true,
+//                url: '/ppt',
+//                templateUrl: 'views/temp.html'
+//            })
+            .state('ppt-list', {
+                url: '/ppt/list',
                 templateUrl: 'views/myppt.html',
                 controller: 'MyPptCtrl'
             })
-            .state('ppt.detail', {
-                url: '/detail',
+            .state('ppt-detail', {
+                url: '/ppt/detail',
                 templateUrl: 'views/pptdetail.html',
                 controller: 'MyPptCtrl'
             })

@@ -48,15 +48,18 @@
     <script src="js/models/User.js"></script>
 
 
-
-
 </head>
 
 
 <body ng-app="CloudSlidesApp">
-    <!--<div ng-view></div>-->
 
-    <ui-view></ui-view>
+<ion-nav-bar class="bar-positive nav-title-slide-ios7">
+    <ion-nav-back-button class="button-icon ion-arrow-left-c">
+    </ion-nav-back-button>
+</ion-nav-bar>
+
+<ion-nav-view animation="slide-left-right-ios7"></ion-nav-view>
+
 </body>
 
 </html>

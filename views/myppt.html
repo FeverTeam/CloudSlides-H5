@@ -1,42 +1,39 @@
-<!--<ion-header-bar class="bar-positive">-->
-<!--<h1 class="title">我的幻灯</h1>-->
-<!--</ion-header-bar>-->
-<!--<ion-content>-->
 <ion-view title="我的幻灯">
 
+    <!--页面内容-->
     <ion-content ng-controller="MyPptCtrl">
-    <div class="list">
-        <div class="card" ng-repeat="ppt in ppts">
-            <div class="item item-body">
-                <img src="http://ionicframework.com/img/docs/delorean.jpg" class="full-image"/>
+        <div class="list">
+            <div class="card" ng-repeat="ppt in ppts">
+                <div class="item item-body">
+                    <img src="http://ionicframework.com/img/docs/delorean.jpg" class="full-image"/>
 
-                <div class="row">
-                    <h2>{{ppt.filename}}</h2>
+                    <div class="row">
+                        <h2>{{ppt.filename}}</h2>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-25">
+                            <p>编号：#{{ppt.id}}</p>
+                        </div>
+                        <div class="col-75">
+                            <p>上传时间：{{ppt.uploadTime}}</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-25">
-                        <p>编号：#{{ppt.id}}</p>
-                    </div>
-                    <div class="col-75">
-                        <p>上传时间：{{ppt.uploadTime}}</p>
-                    </div>
+
+                <div class="item tabs tabs-secondary tabs-icon-left">
+                    <a class="tab-item" href="#/ppt/detail">
+                        <i class="icon ion-ios7-flag-outline"></i>
+                        发起会议
+                    </a>
+                    <a class="tab-item" ng-click="goDetail(ppt)">
+                        <i class="icon ion-ios7-more-outline"></i>
+                        详情
+                    </a>
                 </div>
-            </div>
-
-
-            <div class="item tabs tabs-secondary tabs-icon-left">
-                <a class="tab-item" href="#/ppt/detail">
-                    <i class="icon ion-ios7-flag-outline"></i>
-                    发起会议
-                </a>
-                <a class="tab-item" ng-click="goDetail(ppt)">
-                    <i class="icon ion-ios7-more-outline"></i>
-                    详情
-                </a>
             </div>
         </div>
-    </div>
 
     </ion-content>
 </ion-view>

@@ -1,69 +1,68 @@
-<ion-side-menus>
+<!--<ion-header-bar class="bar-positive">-->
+<!--<h1 class="title">{{'main.headerTitle'|translate}}</h1>-->
+<!--</ion-header-bar>-->
 
-    <!-- Center content -->
-    <ion-side-menu-content>
-        <ion-header-bar class="bar-positive">
-            <h1 class="title">{{'main.headerTitle'|translate}}</h1>
-        </ion-header-bar>
+<ion-view title="CloudSlides云幻灯">
 
-        <ion-content class="stable-bg" ng-controller="MainCtrl">
-            <!--用户欢迎信息-->
-            <div class="list list-inset ">
-                <a class="item item-icon-right">
-                    <i class="icon ion-ios7-person-outline"></i>
-                    <!--Hi, Simon !-->
-                    {{'main.helloMessage'|translate:translationData}}
+
+    <!--页面内容-->
+    <ion-content class="stable-bg" ng-controller="MainCtrl">
+        <!--用户欢迎信息-->
+        <div class="list list-inset ">
+            <a class="item item-icon-right">
+                <i class="icon ion-ios7-person-outline"></i>
+                <!--Hi, Simon !-->
+                {{'main.helloMessage'|translate:translationData}}
+            </a>
+        </div>
+
+        <!--功能面板-->
+        <div class="card">
+            <a class="item item-thumbnail-left assertive" href="#/ppt/list">
+                <img src="images/notebook-icon.png">
+
+                我的幻灯
+
+                <p>我有13个PPT可发起会议</p>
+            </a>
+        </div>
+        <div class="card">
+            <a class="item item-thumbnail-left positive" href="#/mycontrol">
+                <img src="images/cloud-icon.png">
+
+                主持会议
+
+                <p>我主持控制13个会议</p>
+            </a>
+        </div>
+        <div class="card">
+            <a class="item item-thumbnail-left balanced" href="#/myattend">
+                <img src="images/tea-time-icon.png">
+
+                观看会议
+
+                <p>我加入观看25个会议</p>
+            </a>
+        </div>
+
+        <!--辅助功能-->
+        <div class="card">
+            <div class="item tabs tabs-icon-left">
+                <a class="tab-item" href="#">
+                    <i class="icon ion-thumbsup"></i>
+                    支持我们
+                </a>
+                <a class="tab-item" href="#">
+                    <i class="icon ion-chatbox"></i>
+                    建议反馈
+                </a>
+                <a class="tab-item" href="#">
+                    <i class="icon ion-share"></i>
+                    告诉朋友
                 </a>
             </div>
+        </div>
 
-            <!--功能面板-->
-            <div class="card">
-                <a class="item item-thumbnail-left assertive" href="#/ppt/list">
-                    <img src="images/notebook-icon.png">
 
-                    我的幻灯
-
-                    <p>我有13个PPT可发起会议</p>
-                </a>
-            </div>
-            <div class="card">
-                <a class="item item-thumbnail-left positive" href="#/mycontrol">
-                    <img src="images/cloud-icon.png">
-
-                    主持会议
-
-                    <p>我主持控制13个会议</p>
-                </a>
-            </div>
-            <div class="card">
-                <a class="item item-thumbnail-left balanced" href="#/myattend">
-                    <img src="images/tea-time-icon.png">
-
-                    观看会议
-
-                    <p>我加入观看25个会议</p>
-                </a>
-            </div>
-
-            <!--辅助功能-->
-            <div class="card">
-                <div class="item tabs tabs-icon-left">
-                    <a class="tab-item" href="#">
-                        <i class="icon ion-thumbsup"></i>
-                        支持我们
-                    </a>
-                    <a class="tab-item" href="#">
-                        <i class="icon ion-chatbox"></i>
-                        建议反馈
-                    </a>
-                    <a class="tab-item" href="#">
-                        <i class="icon ion-share"></i>
-                        告诉朋友
-                    </a>
-                </div>
-            </div>
-
-        </ion-content>
-    </ion-side-menu-content>
-
-</ion-side-menus>
+    </ion-content>
+</ion-view>

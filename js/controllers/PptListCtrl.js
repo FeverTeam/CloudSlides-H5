@@ -1,6 +1,5 @@
 angular.module('PptListCtrl', [])
-    .controller('PptListCtrl', function ($scope, $ionicPopup, $state) {
-        //初始化数据
+    .controller('PptListCtrl', function ($scope, $ionicActionSheet) {
         $scope.ppts = [
             {
                 id: 1,
@@ -13,23 +12,10 @@ angular.module('PptListCtrl', [])
                 uploadTime: "2013-06-23"
             },
             {
-                id: 2,
+                id: 3,
                 filename: "会议概要.pptx",
                 uploadTime: "2013-06-23"
             }
         ];
-
-        //公共事件
-        $scope.launchMeeting = function (ppt) {
-//            var alertPopup = $ionicPopup.alert({titile: "发起会议", template: "发起会议 编号" + ppt.id});
-            var alertPopup = $ionicPopup.alert({
-                title: '发起会议',
-                template: "发起会议 编号" + ppt.id
-            });
-        }
-
-        $scope.goDetail = function(ppt){
-            $state.go('ppt-detail');
-        }
 
     });

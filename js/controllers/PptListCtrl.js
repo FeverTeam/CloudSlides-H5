@@ -1,5 +1,5 @@
-angular.module('MyPptCtrl', [])
-    .controller('MyPptCtrl', function ($scope) {
+angular.module('PptListCtrl', [])
+    .controller('PptListCtrl', function ($scope, $ionicPopup) {
         //初始化数据
         $scope.ppts = [
             {
@@ -20,8 +20,12 @@ angular.module('MyPptCtrl', [])
         ];
 
         //公共事件
-        $scope.goDetail = function(ppt){
-            alert('ppt #'+ppt.id+' details');
+        $scope.launchMeeting = function (ppt) {
+//            var alertPopup = $ionicPopup.alert({titile: "发起会议", template: "发起会议 编号" + ppt.id});
+            var alertPopup = $ionicPopup.alert({
+                title: '发起会议',
+                template: "发起会议 编号" + ppt.id
+            });
         }
 
     });

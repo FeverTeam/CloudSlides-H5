@@ -9,7 +9,8 @@ angular.module('CloudSlidesApp', [
     'LoginCtrl',
     'SignupCtrl',
     'MainCtrl',
-    'MyPptCtrl',
+    'PptListCtrl',
+    'PptDetailCtrl',
     'MyControlCtrl',
     'MyAttendCtrl',
 
@@ -91,13 +92,13 @@ angular.module('CloudSlidesApp', [
 //            })
             .state('ppt-list', {
                 url: '/ppt/list',
-                templateUrl: 'views/myppt.html',
-                controller: 'MyPptCtrl'
+                templateUrl: 'views/pptList.html',
+                controller: 'PptListCtrl'
             })
             .state('ppt-detail', {
                 url: '/ppt/detail',
-                templateUrl: 'views/pptdetail.html',
-                controller: 'MyPptCtrl'
+                templateUrl: 'views/pptDetail.html',
+                controller: 'PptDetailCtrl'
             })
 
 

@@ -1,11 +1,13 @@
 <ion-view title="我的幻灯">
 
     <!--页面内容-->
-    <ion-content ng-controller="MyPptCtrl">
+    <ion-content ng-controller="PptListCtrl">
         <div class="list">
             <div class="card" ng-repeat="ppt in ppts">
                 <div class="item item-body">
-                    <img src="http://ionicframework.com/img/docs/delorean.jpg" class="full-image"/>
+                    <a href="#/ppt/detail">
+                        <img src="http://ionicframework.com/img/docs/delorean.jpg" class="full-image"/>
+                    </a>
 
                     <div class="row">
                         <h2>{{ppt.filename}}</h2>
@@ -19,15 +21,16 @@
                             <p>上传时间：{{ppt.uploadTime}}</p>
                         </div>
                     </div>
+
                 </div>
 
 
                 <div class="item tabs tabs-secondary tabs-icon-left">
-                    <a class="tab-item" href="#/ppt/detail">
+                    <a class="tab-item" ng-click="launchMeeting(ppt)">
                         <i class="icon ion-ios7-flag-outline"></i>
                         发起会议
                     </a>
-                    <a class="tab-item" ng-click="goDetail(ppt)">
+                    <a class="tab-item" href="#/ppt/detail">
                         <i class="icon ion-ios7-more-outline"></i>
                         详情
                     </a>

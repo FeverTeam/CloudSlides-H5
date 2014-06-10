@@ -3,40 +3,48 @@
 <!--</ion-header-bar>-->
 <!--<ion-content>-->
 <ion-view title="幻灯详情">
-
-    <ion-content ng-controller="MyPptCtrl">
-    <div class="list">
-        <div class="card" ng-repeat="ppt in ppts">
-            <div class="item item-body">
-                <img src="http://ionicframework.com/img/docs/delorean.jpg" class="full-image"/>
-
-                <div class="row">
-                    <h2>{{ppt.filename}}</h2>
-                </div>
-
-                <div class="row">
-                    <div class="col-25">
-                        <p>编号：#{{ppt.id}}</p>
-                    </div>
-                    <div class="col-75">
-                        <p>上传时间：{{ppt.uploadTime}}</p>
-                    </div>
-                </div>
+    <ion-content ng-controller="PptDetailCtrl">
+        <div class="list">
+            <div class="item item-divider">
+                幻灯名称
+            </div>
+            <div class="item item-text-wrap">
+                {{ppt.filename}}
             </div>
 
+            <div class="item item-divider">
+                转换状态
+            </div>
+            <div class="item item-text-wrap">
+                共{{ppt.pageCount}}页 - 已转换
+            </div>
+
+            <div class="item item-divider">
+                上传时间
+            </div>
+            <div class="item item-text-wrap item-">
+                {{ppt.uploadTime}}
+            </div>
+
+            <div class="item">
+                <img src="http://ionicframework.com/img/docs/delorean.jpg" class="full-image"/>
+            </div>
 
             <div class="item tabs tabs-secondary tabs-icon-left">
-                <a class="tab-item">
-                    <i class="icon ion-ios7-flag-outline"></i>
-                    发起会议
+                <a class="tab-item" href="#">
+                    <i class="icon ion-chevron-left"></i>
+
                 </a>
-                <a class="tab-item" ng-click="goDetail(ppt)">
-                    <i class="icon ion-ios7-more-outline"></i>
-                    详情
+                <a class="tab-item" href="#">
+                    2 / {{ppt.pageCount}}
+                </a>
+                <a class="tab-item" href="#">
+                    <i class="icon ion-chevron-right"></i>
+
                 </a>
             </div>
         </div>
-    </div>
+
 
     </ion-content>
 </ion-view>

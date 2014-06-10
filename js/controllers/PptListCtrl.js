@@ -1,5 +1,5 @@
 angular.module('PptListCtrl', [])
-    .controller('PptListCtrl', function ($scope, $ionicActionSheet) {
+    .controller('PptListCtrl', function ($scope, $state) {
         $scope.ppts = [
             {
                 id: 1,
@@ -17,5 +17,12 @@ angular.module('PptListCtrl', [])
                 uploadTime: "2013-06-23"
             }
         ];
+
+        $scope.goDetail = function(ppt){
+            alert(ppt.id);
+            $state.go('pptDetail', {id: ppt.id});
+
+
+        }
 
     });

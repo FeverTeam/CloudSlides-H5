@@ -1,8 +1,9 @@
 <ion-view title="我的幻灯" ng-controller="PptListCtrl">
     <ion-content>
         <div class="list">
-            <a class="item item-icon-right" ng-repeat="ppt in ppts" href="#/ppt/detail/{{ppt.id}}">
+            <a class="item item-icon-right" ng-repeat="ppt in ppts" ng-click="goDetail(ppt)">
                 <h2>{{ppt.filename}}</h2>
+                <p>{{ppt.id}}</p>
                 <p>{{ppt.uploadTime}}</p>
                 <i class="icon icon-accessory ion-chevron-right"></i>
             </a>

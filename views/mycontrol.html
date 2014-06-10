@@ -1,6 +1,23 @@
-<ion-view title="控制会议">
+<ion-view title="控制会议" ng-controller="MyControlCtrl">
     <ion-content>
-        <p>mycontrol</p>
+        <div class="list">
+            <div class="item" ng-repeat="meeting in meetings | orderBy:sorterList[sorter].value">
+                <h2>{{meeting.topic}}</h2>
+
+                <p>会议ID: {{meeting.id}}</p>
+
+                <p>PPT: #{{meeting.ppt.id}} - {{meeting.ppt.filename}}</p>
+
+            </div>
+        </div>
     </ion-content>
+
+    <ion-footer-bar align-title="right" class="bar-balanced">
+        <button class="button  pull-right" ng-click="changeSorter()">
+            排序 - {{sorterList[sorter].text}}
+        </button>
+
+
+    </ion-footer-bar>
 
 </ion-view>

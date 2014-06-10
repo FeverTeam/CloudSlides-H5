@@ -97,7 +97,7 @@ angular.module('CloudSlidesApp', [
                 controller: 'PptListCtrl'
             })
             .state('ppt-detail', {
-                url: '/ppt/detail',
+                url: '/ppt/detail/:id',
                 templateUrl: 'views/pptDetail.html',
                 controller: 'PptDetailCtrl'
             })

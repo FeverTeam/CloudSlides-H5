@@ -1,7 +1,7 @@
 <ion-view title="我观看的会议" ng-controller="MyAttendCtrl">
     <ion-content>
         <div class="list">
-            <div class="item" ng-repeat="meeting in meetings | orderBy:sorter">
+            <div class="item" ng-repeat="meeting in meetings | orderBy:sorterList[sorter].value">
                 <h2>{{meeting.topic}}</h2>
 
                 <p>会议ID: {{meeting.id}}</p>
@@ -14,7 +14,7 @@
 
     <ion-footer-bar align-title="right" class="bar-balanced">
         <button class="button  pull-right" ng-click="changeSorter()">
-            排序 - {{sorter}}
+            排序 - {{sorterList[sorter].text}}
         </button>
 
 

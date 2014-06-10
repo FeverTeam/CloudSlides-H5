@@ -1,6 +1,12 @@
 angular.module('MyAttendCtrl', [])
     .controller('MyAttendCtrl', function ($scope, $ionicActionSheet) {
-        $scope.sorter = 'id';
+        $scope.sorterList = [
+            {value:'topic', text: '会议主题'},
+            {value:'id', text: '会议ID'}
+        ];
+
+        //设置默认排序
+        $scope.sorter = 1;
 
         $scope.meetings = [
             {
@@ -44,23 +50,20 @@ angular.module('MyAttendCtrl', [])
             }
         ];
 
-        $scope.changeSorter = function(){
+
+
+        $scope.changeSorter = function () {
             $ionicActionSheet.show({
-                buttons:[
-                    {text:'按 会议主题 排序'},
-                    {text:'按 会议ID 排序'}
+                buttons: [
+                    {text: '按 会议主题 排序'},
+                    {text: '按 会议ID 排序'}
                 ],
-                titleText:'排序方式',
-                buttonClicked: function(index){
-                    switch (index){
-                        case 0:
-                            $scope.sorter = 'topic';
-                            break;
-                        case 1:
-                            $scope.sorter = 'id';
-                            break
-                    }
-                    return true;
+                titleText: '排序方式',
+                buttonClicked: function (index) {
+                    $scope.sorter = index;
+                    return true; //返回true让系统小会ActionSheet
+                },
+                cancel: function () {
                 }
 
             })

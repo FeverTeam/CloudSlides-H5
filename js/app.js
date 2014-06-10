@@ -91,12 +91,12 @@ angular.module('CloudSlidesApp', [
 //                url: '/ppt',
 //                templateUrl: 'views/temp.html'
 //            })
-            .state('ppt-list', {
+            .state('pptList', {
                 url: '/ppt/list',
                 templateUrl: 'views/pptList.html',
                 controller: 'PptListCtrl'
             })
-            .state('ppt-detail', {
+            .state('pptDetail', {
                 url: '/ppt/detail/:id',
                 templateUrl: 'views/pptDetail.html',
                 controller: 'PptDetailCtrl'

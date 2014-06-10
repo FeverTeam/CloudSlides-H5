@@ -6,7 +6,7 @@
             <div class="card" ng-repeat="ppt in ppts">
                 <div class="item item-body">
                     <!--<a href="#/ppt/detail">-->
-                        <img src="http://ionicframework.com/img/docs/delorean.jpg" class="full-image"/>
+                    <img src="http://ionicframework.com/img/docs/delorean.jpg" class="full-image"/>
                     <!--</a>-->
 
                     <div class="row">
@@ -30,7 +30,7 @@
                         <i class="icon ion-ios7-flag-outline"></i>
                         发起会议
                     </a>
-                    <a class="tab-item" href="#/ppt/detail">
+                    <a class="tab-item" ng-click="goDetail(ppt)">
                         <i class="icon ion-ios7-more-outline"></i>
                         详情
                     </a>

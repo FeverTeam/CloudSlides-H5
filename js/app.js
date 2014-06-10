@@ -13,6 +13,7 @@ angular.module('CloudSlidesApp', [
     'PptDetailCtrl',
     'MyControlCtrl',
     'MyAttendCtrl',
+    'ControlCtrl',
 
     //Services
     'config',   //app constants
@@ -108,6 +109,13 @@ angular.module('CloudSlidesApp', [
                 templateUrl: 'views/mycontrol.html',
                 controller: 'MyControlCtrl'
             })
+            .state('control',{
+                url: '/control/:id',
+                templateUrl: 'views/control.html',
+                controller: 'ControlCtrl'
+
+            })
+
 
             //MyAttend
             .state('myattend', {

@@ -1,14 +1,14 @@
 <ion-view title="控制会议" ng-controller="MyControlCtrl">
     <ion-content>
         <div class="list">
-            <div class="item" ng-repeat="meeting in meetings | orderBy:sorterList[sorter].value">
+            <a class="item" ng-repeat="meeting in meetings | orderBy:sorterList[sorter].value" href="#/control/{{meeting.id}}">
                 <h2>{{meeting.topic}}</h2>
 
                 <p>会议ID: {{meeting.id}}</p>
 
                 <p>PPT: #{{meeting.ppt.id}} - {{meeting.ppt.filename}}</p>
 
-            </div>
+            </a>
         </div>
     </ion-content>
 
